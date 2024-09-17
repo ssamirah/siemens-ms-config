@@ -16,3 +16,8 @@ management:
     env:
       enabled: true
       show-values: always
+spring:
+  security:
+    user:
+      name: admin
+      password: admin123
