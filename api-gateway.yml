@@ -12,5 +12,5 @@ management:
 eureka:
     client:
       service-url:
-        default-zone: http://localhost:8781/eureka/
+        default-zone: http://localhost:8781/eureka
   
