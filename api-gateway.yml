@@ -10,8 +10,7 @@ management:
       enabled: true
       show-values: always
 eureka:
-  client:
-    service-url:
-      default-zone: http://admin:admin123@localhost:8761/eureka/
-    
-    
+    client:
+      service-url:
+        default-zone: http://admin:admin123@localhost:8761/eureka/
+  
