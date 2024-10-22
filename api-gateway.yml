@@ -1,3 +1,24 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: booking-service
+          uri: lb://BOOKING-SERVICE
+          predicates:
+            - Path=/booking/**
+        - id: inventory-service
+          uri: lb://INVENTORY-SERVICE
+          predicates:
+            - Path=/inventory/**
+        - id: payment-service
+          uri: lb://PAYMENT-SERVICE
+          predicates:
+            - Path=/payment/**
+        - id: customer-service
+          uri: lb://CUSTOMER-SERVICE
+          predicates:
+            - Path=/customer/**
+
 management:
   endpoints:
     web:
@@ -9,11 +30,12 @@ management:
     env:
       enabled: true
       show-values: always
+
 eureka:
-    client:
-      service-url:
-        default-zone: http://localhost:8761/eureka
-    instance:
-        prefer-ip-address: true
-        instance-id: ${spring.application.name}:${random.value}
-  
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${random.value}   
+      
